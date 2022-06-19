@@ -1,7 +1,6 @@
 # 1 Устанавливаем модуль Levenshtein через PIP
 # 2 Импортируем модуль Levenshtein
 
-
 import Levenshtein
 
 pairs = [
