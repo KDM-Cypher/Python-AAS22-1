@@ -1,4 +1,4 @@
-import Levenshtein
+from Levenshtein import distance
 
 words = [
     'Уазик', 'Убавить', 'Убавиться', 'Убаюкать', 'Убаюкивать', 'Убедительный', 'Убедить', 'Убедиться', 'Убежать',
@@ -10,7 +10,7 @@ word_comparison = 'Убаюкать'
 if __name__ == "__main__":
     print('Проверяемое слово ' + str(word_comparison))
     for i in words:
-        if Levenshtein.distance(i, word_comparison) == 0:
+        if distance(i, word_comparison) == 0:
             print('"' + str(i) + '"' + ' совподает с проверяемым словом')
         else:
             print('"' + str(i) + '"' + ' не совподает с проверяемым словом')
