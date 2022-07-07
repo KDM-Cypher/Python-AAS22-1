@@ -1,20 +1,22 @@
-# 1 Устанавливаем модуль Levenshtein через PIP
-# 2 Импортируем модуль Levenshtein функцию distance
+import Levenshtein
 
+class LevenshteinWordComparison:
 
-from Levenshtein import distance
+    def word_comparison(word1, word2):
+            print(word1, word2, Levenshtein.distance(word1, word2), )
 
-pairs = [
-    ('год', 'человек'),
-    ('время', 'дело'),
-    ('жизнь', 'жизни'),
-    ('рука', 'работа'),
-    ('слово', 'место'),
-    ('вопрос', 'лицо'),
-    ]
 if __name__ == "__main__":
-    print('Количество преобразований:')
-    i = 0
-    for s, t in pairs:
-        print('Из "' + str(pairs[i][0]) + '"' + ' в "' + str(pairs[i][1]) + '"' + ' ' + str(distance(s, t)))
-        i += 1
+
+    words = [
+        'Уазик', 'Убавить', 'Убавиться', 'Убаюкать', 'Убаюкивать', 'Убедительный', 'Убедить', 'Убедиться', 'Убежать',
+        'Убеждение', 'Убежденный', 'Убежище', 'Убелить', 'Уберечь', 'Убивать', 'Убиваться', 'Убийственный', 'Убийство',
+        'Убийца', 'Убирать', 'Убираться', 'Убитый', 'Убить', 'Убиться', 'Ублаготворить']
+    word_comparison = 'Убаюкать'
+
+    print('Проверяемое слово ' + str(word_comparison))
+    for i in words:
+        if LevenshteinWordComparison.word_comparison(i, word_comparison) == 0:
+            print('"' + str(i) + '"' + ' совподает с проверяемым словом')
+        else:
+            print('"' + str(i) + '"' + ' не совподает с проверяемым словом')
+
